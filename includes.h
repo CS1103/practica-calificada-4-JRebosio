@@ -9,8 +9,9 @@
 #include <iostream>
 #include <vector>
 #include <string_view>
+#include <map>
 #include "lodepng.h"
-
+#include <array>
 using namespace std;
 std::vector<unsigned char> decode(string_view filename, unsigned int& width, unsigned int& height) {
 
