@@ -6,8 +6,8 @@
 #include "includes.h"
 
 
-void filter(const string_view& myfile,vector<unsigned char>& image, unsigned w, unsigned a, unsigned b, unsigned p,
-            unsigned m) {
+void filter(const string_view& myfile,vector<unsigned char>& image, const unsigned w, unsigned a, unsigned b, const int& p,
+           const int& m) {
 
     for (size_t i = a; i < b; i++) {
         for (size_t j = 0; j < w * 4; j += 4) {
@@ -17,7 +17,7 @@ void filter(const string_view& myfile,vector<unsigned char>& image, unsigned w, 
     }
     encode(myfile.data(), image, w, b);
 }
-void Red(const string_view& myfile, vector<unsigned char>& image, unsigned& w, unsigned& h){
+void Red(const string_view& myfile, vector<unsigned char>& image, const unsigned & w,const unsigned &h){
     int p=2,m=1;
     thread t[4];
     int c=0;
@@ -30,7 +30,7 @@ void Red(const string_view& myfile, vector<unsigned char>& image, unsigned& w, u
     }
 }
 
-void Blue(const string_view& myfile, vector<unsigned char>& image, unsigned& w, unsigned& h){
+void Blue(const string_view& myfile, vector<unsigned char>& image, const unsigned& w, const unsigned& h){
     int p=0,m=1;
     thread t[4];
     int c=0;
@@ -43,7 +43,7 @@ void Blue(const string_view& myfile, vector<unsigned char>& image, unsigned& w, 
     }
 }
 
-void Green(const string_view& myfile, vector<unsigned char>& image, unsigned& w, unsigned& h){
+void Green(const string_view& myfile, vector<unsigned char>& image, const unsigned& w,const unsigned& h){
     int p=0,m=2;
     thread t[4];
     int c=0;
@@ -55,6 +55,7 @@ void Green(const string_view& myfile, vector<unsigned char>& image, unsigned& w,
         u.join();
     }
 }
+
 
 
 
