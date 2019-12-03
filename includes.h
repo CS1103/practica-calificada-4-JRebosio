@@ -1,10 +1,13 @@
 //
 // Created by Usuario on 12/2/2019.
 //
-
+#define _USE_MATH_DEFINES
 #ifndef PC4_INCLUDES_H
 #define PC4_INCLUDES_H
-
+#define ang M_PI/4
+#define mx 100000
+#define mn 0
+#include <future>
 #include <thread>
 #include <iostream>
 #include <vector>
@@ -13,7 +16,8 @@
 #include "lodepng.h"
 #include <array>
 using namespace std;
-std::vector<unsigned char> decode(string_view filename, unsigned int& width, unsigned int& height) {
+
+vector<unsigned char> decode(string_view filename, unsigned int& width, unsigned int& height) {
 
     std::vector<unsigned char> result;
     unsigned error = lodepng::decode(result, width, height, filename.data());

@@ -1,12 +1,12 @@
-﻿#define _USE_MATH_DEFINES
+﻿
 
 #include <iostream>
 #include <vector>
 #include <string_view>
-#include "lodepng.h"
+
 #include "includes.h"
 #include "Filter.h"
-
+//#include "rotate.h"
 
 using namespace std;
 
@@ -34,6 +34,7 @@ int main()
     Blue("../b.png",image,w,h);
     Green("../g.png",image2,w,h);
     Red("../r.png",image3,w,h);
-    mover(imagemove,h,w);
+    movethread("../move.png",imagemove,w,h);
+   // rotudo("../tt.png");
     return 0;
 }
