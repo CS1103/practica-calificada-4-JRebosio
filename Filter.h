@@ -98,7 +98,7 @@ void movethread(const string_view& myfile, vector<unsigned char>& image, const u
             minj = min(jmove, minj);
             maxj = max(jmove, maxj);
         }
-    }    cout<<"tamaño"<<img.size()<<" "<<ir.size();
+    }
     int rangemovej = maxj - minj + 1;
     int rangemovei = maxi - mini + 1;
     for (int i = mini; i <= maxi; i++){
